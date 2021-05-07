@@ -1,7 +1,8 @@
 <h1>Search users</h1>
+{{#if error}} <span>{{error}}</span>{{/if}}
 <form action="/users/search"  method="POST" class="form-inline">
   <div class="form-group">
-    <input type="text" class="form-control w-25" id="userInput" placeholder="User">
+    <input type="text" class="form-control w-25" id="userInput" placeholder="User" name="id">
   </div>
-    <button type="submit" class="btn btn-primary mb-3 mt-3">Search</button>  </div>
+    <button type="submit" class="btn btn-primary mb-3 mt-3">Search</button>  
 </form>
