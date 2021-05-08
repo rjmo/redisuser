@@ -30,7 +30,7 @@ router.get('/add', function(req, res, next){
   res.render('addUser')
 });
 router.post('/add', function(req, res, next){
-  
+
   const { id, email, first_name, last_name, phone } = req.body;
 
   client.hmset(id, [
@@ -48,4 +48,8 @@ router.post('/add', function(req, res, next){
   })
 });
 
+router.delete('/delete/:id', function (req, res, next ) {
+  client.del(req.params.id);
+  res.redirect('/');
+})
 module.exports = router;
